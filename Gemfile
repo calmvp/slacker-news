@@ -38,6 +38,9 @@ group :test do
   gem 'faker'
   gem 'binding_of_caller'
   gem 'shoulda-matchers'
+  gem 'selenium', '0.2.10'
+  gem 'selenium-client', '1.2.18'
+  gem 'selenium-webdriver', '2.33.0'
 end
 
 
