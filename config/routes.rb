@@ -1,4 +1,11 @@
 HnClone::Application.routes.draw do
+  get '/signin', to: "sessions#new", as: 'sign_in_form'
+  post '/signin', to: "sessions#create", as: 'sign_in'
+  post '/signout', to: "sessions#destroy", as: 'sign_out'
+  
+  root to: 'posts#index'  
+
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
