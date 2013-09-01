@@ -8,7 +8,8 @@
     <%= f.label :body %>
     <%= f.text_area :body, id: "post_body" %><br>
     <br>
-    <%= f.text_field :tags, id: "post_tags" %><br>
+    <%= f.label :tag_names %>
+    <%= f.text_field :tag_names, id: "tag_names" %><br>
     <br>
     <%= f.submit "Submit Post" %>
   <% end %>

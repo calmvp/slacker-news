@@ -1,5 +1,8 @@
 <div>
-<h1>@post.title</h1>
-<p>@post.body</p>
-<p>Authod: <%= @post.user %></p>
+<h1><%= @post.title %></h1>
+<p><%= @post.body %></p>
+<ul><% @post.tags.each do |tag| %>
+  <li><%= tag.name %></li>
+<% end %></ul>
+<p>Author: <%= @post.user.name %></p>
 </div>
