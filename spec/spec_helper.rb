@@ -33,6 +33,15 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 #                                           secret: "aoiefnaewofianefo" }
 # end
 
+def sign_in_user
+  visit root_url
+      click_link "Sign In"
+
+      fill_in 'email', with: "ned@gmail.com"
+      fill_in 'password', with: "password"
+      click_button 'Sign In'
+end
+
 RSpec.configure do |config|
   config.include Capybara::DSL
 
