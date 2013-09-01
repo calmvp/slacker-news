@@ -41,7 +41,6 @@ describe 'User authentication' do
     click_button 'Sign In'
 
     click_link 'Sign Out'
-    save_and_open_page
     page.should have_selector('a', text: 'Sign In')
     end
   end
