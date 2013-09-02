@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe 'User authentication' do
   let!(:user) { FactoryGirl.create(:user) }
-  context 'when user signs-in' do
-    it 'signs the user in and sent to profile' do
+  context 'when visitor signs-in' do
+    it 'signs the visitor in and sends them to profile' do
       visit root_url
       click_link "Sign In"
 
@@ -15,7 +15,7 @@ describe 'User authentication' do
       page.should have_content ('Sign Out')
     end
   end
-  context 'when user signs-up' do
+  context 'when visitor signs-up' do
     it 'signs the user up and sends them to profile' do
       visit root_url
       click_link "Sign Up"

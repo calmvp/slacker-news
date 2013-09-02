@@ -1,8 +1,26 @@
 <div>
 <h1><%= @post.title %></h1>
 <p><%= @post.body %></p>
-<ul><% @post.tags.each do |tag| %>
-  <li><%= tag.name %></li>
-<% end %></ul>
+<% if !@post.tags.empty? %>
+  <ul><% @post.tags.each do |tag| %>
+	<li><%= tag.name %></li>
+  <% end %>
+<% end %>
+</ul>
 <p>Author: <%= @post.user.name %></p>
+<br>
+
+<% if !@post.comments.empty? %>
+  <ul><% @post.comments.each do |comment| %>
+    <li><%= comment.body %></li>
+  <% end %>
+<% end %>
+</ul>
+
+<%= form_for([@post, @comment]) do |f| %>
+  <%= f.label :comment_body %>
+  <%= f.text_field :body, id: "comment_body" %><br>
+  <br>
+  <%= f.submit "Comment" %>
+<% end %>
 </div>
