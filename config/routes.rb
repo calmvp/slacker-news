@@ -6,7 +6,11 @@ HnClone::Application.routes.draw do
   root to: 'posts#index'  
 
   resources :users 
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:index, :new, :create]
+  end
+  resources :comments, only: [:show, :edit, :update, :destroy]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

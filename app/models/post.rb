@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings 
+  has_many :comments
 
   attr_accessor :tag_names
   attr_accessible :tag_names, :title, :body
